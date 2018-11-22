@@ -1,0 +1,38 @@
+<div class="container">
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Temas</th>
+          <th>Horas</th>
+          <th>Nivel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursosUsuario">
+          <td>{{curso.nombre}}</td>
+          <td>{{curso.temas}}</td>
+          <td>{{curso.horas}}</td>
+          <td>{{curso.nivel}}</td>
+          <!--Añadimos cursos-->
+        </tr>
+      </tbody>
+    </table>
+    
+    <h1>Añadir curso</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="actualizarCursoUsuario()" #cursoUsuarioForm="ngForm">
+          <div class="form-group">
+            <label for="curso_id">Nombre curso</label>
+            <select class="form-control" id="curso_id" required [(ngModel)]="curso_id" name="curso_id">
+              <option *ngFor="let curso of cursos" [value]="curso._id">{{curso.nombre}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!cursoUsuarioForm.form.valid">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

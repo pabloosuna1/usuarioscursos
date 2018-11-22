@@ -1,0 +1,13 @@
+<div class="container">
+  <tr *ngFor="let curso of cursos">
+    <h1>{{ curso.nombre }}</h1>
+    <dl class="list">
+      <dt>Temas</dt>
+      <dd>{{ curso.temas }}</dd>
+      <dt>Horas</dt>
+      <dd>{{ curso.horas }}</dd>
+      <dt>Nivel</dt>
+      <dd>{{ curso.Nivel }}</dd>
+    </dl>
+  </tr>
+</div>

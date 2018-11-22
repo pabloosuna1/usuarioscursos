@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Añadir nuevo usuario</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="actualizarUsuario()" #usuarioForm="ngForm">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre required">
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" class="form-control" [(ngModel)]="usuario.apellidos" name="apellidos" required>
+        </div>
+        <div class="form-group">
+          <label for="nacimiento">Fecha Nacimiento</label>
+          <input type="text" class="form-control" [(ngModel)]="usuario.nacimiento" name="nacimiento" required>
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" class="form-control" [(ngModel)]="usuario.ciudad" name="ciudad" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!usuarioForm.form.valid">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
